@@ -7,12 +7,7 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {
-  View,
-  Text,
-  ScrollView,
-  KeyboardAvoidingView,
-} from 'react-native';
+import { View, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ActionCreators from '../redux/actions';
@@ -27,20 +22,24 @@ import styles from './styles/LogIn';
 
 class LogIn extends Component {
   static navigationOptions = ({ navigation }) => ({
-    headerRight: <NavBarButton
-      handleButtonPress={() => navigation.navigate('ForgotPassword')}
-      location="right"
-      color={colors.white}
-      text="Forgot Password"
-    />,
-    headerLeft: <NavBarButton
-      handleButtonPress={() => navigation.goBack()}
-      location="left"
-      icon={<Icon name="angle-left" color={colors.white} size={30} />}
-    />,
+    headerRight: (
+      <NavBarButton
+        handleButtonPress={() => navigation.navigate('ForgotPassword')}
+        location="right"
+        color={colors.white}
+        text="Forgot Password"
+      />
+    ),
+    headerLeft: (
+      <NavBarButton
+        handleButtonPress={() => navigation.goBack()}
+        location="left"
+        icon={<Icon name="angle-left" color={colors.white} size={30} />}
+      />
+    ),
     headerStyle: transparentHeaderStyle,
     headerTransparent: true,
-    headerTintColor: colors.white,
+    headerTintColor: colors.white
   });
 
   constructor(props) {
@@ -51,7 +50,7 @@ class LogIn extends Component {
       emailAddress: '',
       password: '',
       validPassword: false,
-      loadingVisible: false,
+      loadingVisible: false
     };
 
     this.handleCloseNotification = this.handleCloseNotification.bind(this);
@@ -120,22 +119,15 @@ class LogIn extends Component {
   }
 
   render() {
-    const {
-      formValid, loadingVisible, validEmail, validPassword,
-    } = this.state;
+    const { formValid, loadingVisible, validEmail, validPassword } = this.state;
     const showNotification = !formValid;
     const background = formValid ? colors.green01 : colors.darkOrange;
     const notificationMarginTop = showNotification ? 10 : 0;
     return (
-      <KeyboardAvoidingView
-        style={[{ backgroundColor: background }, styles.wrapper]}
-        behavior="padding"
-      >
+      <KeyboardAvoidingView style={[{ backgroundColor: background }, styles.wrapper]} behavior="padding">
         <View style={styles.scrollViewWrapper}>
           <ScrollView style={styles.scrollView}>
-            <Text style={styles.loginHeader}>
-Log In
-            </Text>
+            <Text style={styles.loginHeader}>Log In</Text>
             <InputField
               labelText="EMAIL ADDRESS"
               labelTextSize={14}
@@ -160,15 +152,9 @@ Log In
               showCheckmark={validPassword}
             />
           </ScrollView>
-          <NextArrowButton
-            handleNextButton={this.handleNextButton}
-            disabled={this.toggleNextButtonState()}
-          />
+          <NextArrowButton handleNextButton={this.handleNextButton} disabled={this.toggleNextButtonState()} />
         </View>
-        <Loader
-          modalVisible={loadingVisible}
-          animationType="fade"
-        />
+        <Loader modalVisible={loadingVisible} animationType="fade" />
         <View style={[styles.notificationWrapper, { marginTop: notificationMarginTop }]}>
           <Notification
             showNotification={showNotification}
@@ -184,7 +170,7 @@ Log In
 }
 
 const mapStateToProps = state => ({
-  loggedInStatus: state.loggedInStatus,
+  loggedInStatus: state.loggedInStatus
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators(ActionCreators, dispatch);
@@ -193,8 +179,11 @@ LogIn.propTypes = {
   logIn: PropTypes.func.isRequired,
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
-    goBack: PropTypes.func,
-  }).isRequired,
+    goBack: PropTypes.func
+  }).isRequired
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LogIn);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LogIn);

@@ -5,19 +5,13 @@
  */
 
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default class ProfileContainer extends Component {
   render() {
     return (
       <View style={styles.wrapper}>
-        <Text>
-Profile Container
-        </Text>
+        <Text>Profile Container</Text>
       </View>
     );
   }
@@ -26,6 +20,6 @@ Profile Container
 const styles = StyleSheet.create({
   wrapper: {
     display: 'flex',
-    padding: 50,
-  },
+    padding: 50
+  }
 });

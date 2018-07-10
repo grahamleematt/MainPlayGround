@@ -5,19 +5,13 @@
  */
 
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default class InboxContainer extends Component {
   render() {
     return (
       <View style={styles.wrapper}>
-        <Text>
-Inbox Container
-        </Text>
+        <Text>Inbox Container</Text>
       </View>
     );
   }
@@ -26,6 +20,6 @@ Inbox Container
 const styles = StyleSheet.create({
   wrapper: {
     display: 'flex',
-    padding: 50,
-  },
+    padding: 50
+  }
 });
