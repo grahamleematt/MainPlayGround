@@ -11,4 +11,4 @@ import {
 import App from './App';
 
 StatusBar.setBarStyle('light-content', true);
-AppRegistry.registerComponent('AirbnbClone', () => App);
+AppRegistry.registerComponent('MainPlayground', () => App);

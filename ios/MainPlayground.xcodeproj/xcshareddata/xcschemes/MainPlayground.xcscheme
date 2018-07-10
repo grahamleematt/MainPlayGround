@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "AirbnbClone.app"
-               BlueprintName = "AirbnbClone"
-               ReferencedContainer = "container:AirbnbClone.xcodeproj">
+               BuildableName = "MainPlayground.app"
+               BlueprintName = "MainPlayground"
+               ReferencedContainer = "container:MainPlayground.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "AirbnbCloneTests.xctest"
-               BlueprintName = "AirbnbCloneTests"
-               ReferencedContainer = "container:AirbnbClone.xcodeproj">
+               BuildableName = "MainPlaygroundTests.xctest"
+               BlueprintName = "MainPlaygroundTests"
+               ReferencedContainer = "container:MainPlayground.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "AirbnbCloneTests.xctest"
-               BlueprintName = "AirbnbCloneTests"
-               ReferencedContainer = "container:AirbnbClone.xcodeproj">
+               BuildableName = "MainPlaygroundTests.xctest"
+               BlueprintName = "MainPlaygroundTests"
+               ReferencedContainer = "container:MainPlayground.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AirbnbClone.app"
-            BlueprintName = "AirbnbClone"
-            ReferencedContainer = "container:AirbnbClone.xcodeproj">
+            BuildableName = "MainPlayground.app"
+            BlueprintName = "MainPlayground"
+            ReferencedContainer = "container:MainPlayground.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AirbnbClone.app"
-            BlueprintName = "AirbnbClone"
-            ReferencedContainer = "container:AirbnbClone.xcodeproj">
+            BuildableName = "MainPlayground.app"
+            BlueprintName = "MainPlayground"
+            ReferencedContainer = "container:MainPlayground.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "AirbnbClone.app"
-            BlueprintName = "AirbnbClone"
-            ReferencedContainer = "container:AirbnbClone.xcodeproj">
+            BuildableName = "MainPlayground.app"
+            BlueprintName = "MainPlayground"
+            ReferencedContainer = "container:MainPlayground.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -5,12 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  StyleSheet,
-} from 'react-native';
+import { View, Text, ScrollView, StyleSheet } from 'react-native';
 import SearchBar from '../components/SearchBar';
 import Categories from '../components/explore/Categories';
 import Listings from '../components/explore/Listings';
@@ -22,7 +17,7 @@ export default class ExploreContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      favouriteListings: [],
+      favouriteListings: []
     };
     this.handleAddToFav = this.handleAddToFav.bind(this);
     this.renderListings = this.renderListings.bind(this);
@@ -58,9 +53,7 @@ export default class ExploreContainer extends Component {
 
   renderListings() {
     return listings.map((listing, index) => (
-      <View
-        key={`listing-${index}`}
-      >
+      <View key={`listing-${index}`}>
         <Listings
           key={`listing-item-${index}`}
           title={listing.title}
@@ -78,13 +71,8 @@ export default class ExploreContainer extends Component {
     return (
       <View style={styles.wrapper}>
         <SearchBar />
-        <ScrollView
-          style={styles.scrollview}
-          contentContainerStyle={styles.scrollViewContent}
-        >
-          <Text style={styles.heading}>
-Explore Airbnb
-          </Text>
+        <ScrollView style={styles.scrollview} contentContainerStyle={styles.scrollViewContent}>
+          <Text style={styles.heading}>Explore Airbnb</Text>
           <View style={styles.categories}>
             <Categories categories={categoriesList} />
           </View>
@@ -98,22 +86,22 @@ Explore Airbnb
 const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
-    backgroundColor: colors.white,
+    backgroundColor: colors.white
   },
   scrollview: {
-    paddingTop: 100,
+    paddingTop: 100
   },
   scrollViewContent: {
-    paddingBottom: 80,
+    paddingBottom: 80
   },
   categories: {
-    marginBottom: 40,
+    marginBottom: 40
   },
   heading: {
     fontSize: 22,
     fontWeight: '600',
     paddingLeft: 20,
     paddingBottom: 20,
-    color: colors.gray04,
-  },
+    color: colors.gray04
+  }
 });

@@ -5,12 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  KeyboardAvoidingView,
-  ScrollView,
-} from 'react-native';
+import { View, Text, KeyboardAvoidingView, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import colors from '../styles/colors';
 import transparentHeaderStyle from '../styles/navigation';
@@ -23,14 +18,16 @@ import styles from './styles/ForgotPassword';
 
 export default class ForgotPassword extends Component {
   static navigationOptions = ({ navigation }) => ({
-    headerLeft: <NavBarButton
-      handleButtonPress={() => navigation.goBack()}
-      location="left"
-      icon={<Icon name="angle-left" color={colors.white} size={30} />}
-    />,
+    headerLeft: (
+      <NavBarButton
+        handleButtonPress={() => navigation.goBack()}
+        location="left"
+        icon={<Icon name="angle-left" color={colors.white} size={30} />}
+      />
+    ),
     headerStyle: transparentHeaderStyle,
     headerTransparent: true,
-    headerTintColor: colors.white,
+    headerTintColor: colors.white
   });
 
   constructor(props) {
@@ -39,7 +36,7 @@ export default class ForgotPassword extends Component {
       formValid: true,
       loadingVisible: false,
       validEmail: false,
-      emailAddress: '',
+      emailAddress: ''
     };
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.goToNextStep = this.goToNextStep.bind(this);
@@ -69,12 +66,12 @@ export default class ForgotPassword extends Component {
       if (emailAddress === 'wrong@email.com') {
         this.setState({
           loadingVisible: false,
-          formValid: false,
+          formValid: false
         });
       } else {
         this.setState({
           loadingVisible: false,
-          formValid: true,
+          formValid: true
         });
       }
     }, 2000);
@@ -89,18 +86,11 @@ export default class ForgotPassword extends Component {
     const background = formValid ? colors.green01 : colors.darkOrange;
     const showNotification = !formValid;
     return (
-      <KeyboardAvoidingView
-        style={[{ backgroundColor: background }, styles.wrapper]}
-        behavior="padding"
-      >
+      <KeyboardAvoidingView style={[{ backgroundColor: background }, styles.wrapper]} behavior="padding">
         <View style={styles.scrollViewWrapper}>
           <ScrollView style={styles.scrollView}>
-            <Text style={styles.forgotPasswordHeading}>
-Forgot your password?
-            </Text>
-            <Text style={styles.forgotPasswordSubheading}>
-Enter your email to find your account
-            </Text>
+            <Text style={styles.forgotPasswordHeading}>Forgot your password?</Text>
+            <Text style={styles.forgotPasswordSubheading}>Enter your email to find your account</Text>
             <InputField
               customStyle={{ marginBottom: 30 }}
               textColor={colors.white}
@@ -113,15 +103,9 @@ Enter your email to find your account
               showCheckmark={validEmail}
             />
           </ScrollView>
-          <NextArrowButton
-            handleNextButton={this.goToNextStep}
-            disabled={!validEmail}
-          />
+          <NextArrowButton handleNextButton={this.goToNextStep} disabled={!validEmail} />
         </View>
-        <Loader
-          modalVisible={loadingVisible}
-          animationType="fade"
-        />
+        <Loader modalVisible={loadingVisible} animationType="fade" />
         <View style={styles.notificationWrapper}>
           <Notification
             showNotification={showNotification}

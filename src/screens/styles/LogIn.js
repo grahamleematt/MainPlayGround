@@ -16,7 +16,7 @@ if (iPhoneSize() === 'small') {
 const styles = StyleSheet.create({
   wrapper: {
     display: 'flex',
-    flex: 1,
+    flex: 1
   },
   scrollViewWrapper: {
     marginTop: 70,
@@ -26,26 +26,26 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top: 0,
-    bottom: 0,
+    bottom: 0
   },
   scrollView: {
     paddingLeft: 30,
     paddingRight: 30,
     paddingTop: 20,
-    flex: 1,
+    flex: 1
   },
   loginHeader: {
     fontSize: headingTextSize,
     color: colors.white,
     fontWeight: '300',
-    marginBottom: 40,
+    marginBottom: 40
   },
   notificationWrapper: {
     position: 'absolute',
     bottom: 0,
     left: 0,
-    right: 0,
-  },
+    right: 0
+  }
 });
 
 export default styles;

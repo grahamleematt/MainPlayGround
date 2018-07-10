@@ -6,13 +6,7 @@
 
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TouchableHighlight,
-  ScrollView,
-} from 'react-native';
+import { View, Text, TouchableOpacity, TouchableHighlight, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -27,18 +21,11 @@ import styles from './styles/CreateList';
 class CreateList extends Component {
   static navigationOptions = ({ navigation }) => ({
     headerLeft: (
-      <TouchableOpacity
-        style={styles.closeButton}
-        onPress={() => navigation.goBack()}
-      >
-        <Icon
-          name="md-close"
-          size={30}
-          color={colors.lightBlack}
-        />
+      <TouchableOpacity style={styles.closeButton} onPress={() => navigation.goBack()}>
+        <Icon name="md-close" size={30} color={colors.lightBlack} />
       </TouchableOpacity>
     ),
-    headerStyle: styles.headerStyle,
+    headerStyle: styles.headerStyle
   });
 
   constructor(props) {
@@ -47,7 +34,7 @@ class CreateList extends Component {
     this.state = {
       privacyOption: 'private',
       location: props.navigation.state.params.listing.location,
-      loading: false,
+      loading: false
     };
 
     this.listCreated = false;
@@ -89,9 +76,7 @@ class CreateList extends Component {
     return (
       <View style={styles.wrapper}>
         <ScrollView style={styles.scrollView}>
-          <Text style={styles.heading}>
-            Create a list
-          </Text>
+          <Text style={styles.heading}>Create a list</Text>
           <View style={styles.content}>
             <View style={styles.inputWrapper}>
               <InputField
@@ -111,18 +96,14 @@ class CreateList extends Component {
               />
             </View>
             <View style={styles.privacyOptions}>
-              <Text style={styles.privacyHeading}>
-                Privacy
-              </Text>
+              <Text style={styles.privacyHeading}>Privacy</Text>
               <TouchableHighlight
                 onPress={() => this.selectPrivacyOption('public')}
                 style={styles.privacyOptionItem}
                 underlayColor={colors.gray01}
               >
                 <View>
-                  <Text style={styles.privacyOptionTitle}>
-                    Public
-                  </Text>
+                  <Text style={styles.privacyOptionTitle}>Public</Text>
                   <Text style={styles.privacyOptionDescription}>
                     Visible to everyone and included on your public Airbnb profile.
                   </Text>
@@ -145,12 +126,8 @@ class CreateList extends Component {
                 underlayColor={colors.gray01}
               >
                 <View>
-                  <Text style={styles.privacyOptionTitle}>
-                    Private
-                  </Text>
-                  <Text style={styles.privacyOptionDescription}>
-                    Visible only to you and any friends you invite.
-                  </Text>
+                  <Text style={styles.privacyOptionTitle}>Private</Text>
+                  <Text style={styles.privacyOptionDescription}>Visible only to you and any friends you invite.</Text>
                   <View style={styles.privacyRadioInput}>
                     <RadioInput
                       backgroundColor={colors.gray07}
@@ -176,11 +153,11 @@ class CreateList extends Component {
             iconPosition="left"
             disabled={!location}
             loading={loading}
-            icon={(
+            icon={
               <View style={styles.buttonIcon}>
                 <FontAwesomeIcon name="angle-right" color={colors.white} size={30} />
               </View>
-            )}
+            }
             handleOnPress={this.handleCreateList}
           />
         </View>
@@ -196,11 +173,14 @@ CreateList.propTypes = {
     state: PropTypes.shape({
       params: PropTypes.shape({
         listing: PropTypes.shape({
-          location: PropTypes.string,
-        }),
-      }),
-    }),
-  }).isRequired,
+          location: PropTypes.string
+        })
+      })
+    })
+  }).isRequired
 };
 
-export default connect(null, mapDispatchToProps)(CreateList);
+export default connect(
+  null,
+  mapDispatchToProps
+)(CreateList);
